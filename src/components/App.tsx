@@ -4,7 +4,6 @@ import Sakumamayu from './Sakumamayu';
 import ToDo from './ToDo';
 import Home from './Home';
 import NavMenu from './NavMenu';
-import '../css/App.css';
 
 class App extends React.Component {
   render() {
