@@ -1,7 +1,18 @@
 import * as React from 'react';
-class ToDoPage extends React.Component {
+
+interface ToDoList {
+    data: string;
+}
+
+class ToDoPage extends React.Component<{}, ToDoList> {
+    constructor(props: ToDoList) {
+        super(props);
+        this.state = { data: '佐久間まゆ' };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
     handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+        this.setState({ data: '' });
     }
     render() {
         return (
@@ -16,6 +27,9 @@ class ToDoPage extends React.Component {
                         Submit
                     </button>
                 </form>
+                <p>
+                    {this.state.data}
+                </p>
             </div>
         );
     }
