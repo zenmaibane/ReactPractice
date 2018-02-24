@@ -1,14 +1,9 @@
 import * as React from 'react';
-import TodoView from './ToDo';
+import ToDoList from './ToDoList';
 
-interface ToDoList {
-    data: string;
-}
-
-class ToDoPage extends React.Component<{}, ToDoList> {
-    constructor(props: ToDoList) {
+class ToDoPage extends React.Component {
+    constructor(props: React.Component) {
         super(props);
-        this.state = { data: '佐久間まゆ' };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
@@ -28,7 +23,7 @@ class ToDoPage extends React.Component<{}, ToDoList> {
                         Submit
                     </button>
                 </form>
-                <TodoView id={1} isCompleted={false} text="佐久間まゆ is Cute" />
+                <ToDoList list={[{ id: 3, isCompleted: true, text: '佐久間まゆ' }]} />
             </div>
         );
     }

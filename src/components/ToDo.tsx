@@ -5,10 +5,17 @@ export interface ToDo {
     text: string;
 }
 
-const ToDoView = (props: ToDo) => (
-    <p>
-        {props.text}
-    </p>
-);
+class ToDoView extends React.Component<ToDo> {
+    constructor(props: ToDo) {
+        super(props);
+    }
+    render() {
+        return (
+            <p>
+                {this.props.text}
+            </p>
+        );
+    }
+}
 
 export default ToDoView;

@@ -1,8 +1,18 @@
-// import * as React from 'react';
-// import Todo from './ToDo';
+import * as React from 'react';
+import ToDoView, { ToDo } from './ToDo';
 
-// class ToDOList extends React.Component {
+interface ToDoList {
+    list: Array<ToDo>;
+}
 
-// }
-
-// export default ToDOList;
+const ToDoList = (props: ToDoList) => {
+    const todos = props.list.map(todo =>
+        <ToDoView key={todo.id} id={todo.id} isCompleted={todo.isCompleted} text={todo.text} />
+    );
+    return (
+        <p>
+            {todos}
+        </p>
+    );
+};
+export default ToDoList;
