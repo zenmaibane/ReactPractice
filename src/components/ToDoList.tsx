@@ -7,12 +7,12 @@ export interface ToDoList {
 
 const ToDoListView = (props: ToDoList) => {
     const todos = props.list.map(todo =>
-        <ToDoView key={todo.id} id={todo.id} isCompleted={todo.isCompleted} text={todo.text} />
+        <ToDoView key={todo.id} id={todo.id} isCompleted={todo.isCompleted} text={todo.text} {...todo} />
     );
     return (
-        <p>
+        <div>
             {todos}
-        </p>
+        </div>
     );
 };
 export default ToDoListView;
