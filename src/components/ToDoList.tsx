@@ -1,11 +1,11 @@
 import * as React from 'react';
 import ToDoView, { ToDo } from './ToDo';
 
-interface ToDoList {
+export interface ToDoList {
     list: Array<ToDo>;
 }
 
-const ToDoList = (props: ToDoList) => {
+const ToDoListView = (props: ToDoList) => {
     const todos = props.list.map(todo =>
         <ToDoView key={todo.id} id={todo.id} isCompleted={todo.isCompleted} text={todo.text} />
     );
@@ -15,4 +15,4 @@ const ToDoList = (props: ToDoList) => {
         </p>
     );
 };
-export default ToDoList;
+export default ToDoListView;

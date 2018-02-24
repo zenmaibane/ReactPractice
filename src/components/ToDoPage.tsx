@@ -1,14 +1,15 @@
 import * as React from 'react';
-import ToDoList from './ToDoList';
+import ToDoListView, { ToDoList } from './ToDoList';
 
-class ToDoPage extends React.Component {
-    constructor(props: React.Component) {
+class ToDoPage extends React.Component<{}, ToDoList> {
+    constructor(props: ToDoList) {
         super(props);
+        this.state = { list: [] };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
         event.preventDefault();
-        this.setState({ data: '' });
+        this.setState({ list: [{ id: 3, isCompleted: true, text: '佐久間まゆ' }] });
     }
     render() {
         return (
@@ -23,7 +24,7 @@ class ToDoPage extends React.Component {
                         Submit
                     </button>
                 </form>
-                <ToDoList list={[{ id: 3, isCompleted: true, text: '佐久間まゆ' }]} />
+                <ToDoListView list={this.state.list} />
             </div>
         );
     }
