@@ -1,8 +1,14 @@
-// import * as React from 'react';
-// const ToDO = () => (
-//     <div>
-//         <h2 className="ui dividing header">ToDOアプリ</h2>
-//         <p>チュートリアルではおなじみのあいつ</p>
-//     </div>
-// );
-// export default ToDO;
+import * as React from 'react';
+export interface ToDo {
+    id: number;
+    isCompleted: boolean;
+    text: string;
+}
+
+const ToDoView = (props: ToDo) => (
+    <p>
+        {props.text}
+    </p>
+);
+
+export default ToDoView;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import TodoView from './ToDo';
 
 interface ToDoList {
     data: string;
@@ -10,7 +11,7 @@ class ToDoPage extends React.Component<{}, ToDoList> {
         this.state = { data: '佐久間まゆ' };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
         event.preventDefault();
         this.setState({ data: '' });
     }
@@ -27,9 +28,7 @@ class ToDoPage extends React.Component<{}, ToDoList> {
                         Submit
                     </button>
                 </form>
-                <p>
-                    {this.state.data}
-                </p>
+                <TodoView id={1} isCompleted={false} text="佐久間まゆ is Cute" />
             </div>
         );
     }
