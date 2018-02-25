@@ -14,19 +14,11 @@ class ToDoView extends React.Component<ToDo, ToDo> {
     completedTask() {
         this.setState({ isCompleted: true });
     }
-    showCompletedLink() {
-        if (this.state.isCompleted) {
-            return;
-        }
-        return (
-            <a href="#" onClick={this.completedTask}>終わった</a>
-        );
-    }
     render() {
         return (
-            <div>
+            <div className={'test ' + (this.state.isCompleted ? 'completed' : null)}>
                 {this.props.text}
-                {this.showCompletedLink()}
+                <a href="#" onClick={this.completedTask}>終わった</a>
             </div>
         );
     }

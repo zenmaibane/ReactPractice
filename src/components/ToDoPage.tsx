@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ToDoListView, { ToDoList } from './ToDoList';
 let id = 1;
-class ToDoPage extends React.Component<{}, ToDoList> {
+class ToDoPage extends React.Component<ToDoList, ToDoList> {
     constructor(props: ToDoList) {
         super(props);
         this.state = { list: [], };
